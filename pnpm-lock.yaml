@@ -1,8 +1,6 @@
 dependencies:
-  gd-bs: 3.0.6
+  gd-bs: 3.0.7
   vue: 2.6.11
-  vue-property-decorator: 9.0.0_vue@2.6.11
-  vue-template-compiler: 2.6.11
 devDependencies:
   '@babel/core': 7.10.4
   '@babel/preset-env': 7.10.4_@babel+core@7.10.4
@@ -12,7 +10,7 @@ devDependencies:
   sass-loader: 9.0.1_node-sass@4.14.1+webpack@4.43.0
   style-loader: 1.2.1_webpack@4.43.0
   ts-loader: 7.0.5
-  vue-loader: 15.9.3_6744650c5da92901421f33388a4899bc
+  vue-loader: 15.9.3_css-loader@3.6.0+webpack@4.43.0
   webpack: 4.43.0_webpack@4.43.0
   webpack-cli: 3.3.12_webpack@4.43.0
   webpack-dev-server: 3.11.0_e3c29a84673020aaddda2276110d4702
@@ -2021,9 +2019,6 @@ packages:
       node: '>=0.10'
     resolution:
       integrity: sha1-hTz6D3y+L+1d4gMmuN1YEDX24vA=
-  /de-indent/1.0.2:
-    resolution:
-      integrity: sha1-sgOOhG3DO6pXlhKNCAS0VbjB4h0=
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
@@ -2726,13 +2721,13 @@ packages:
       node: '>= 4.0.0'
     resolution:
       integrity: sha512-BRdNm8hbWzFzWHERTrejLqwHDfS4GibPoq5wjTPIoJHoBtKGPg3xAFfxmM+9ztbXelxcf2hwQcaz1PtmFeue8g==
-  /gd-bs/3.0.6:
+  /gd-bs/3.0.7:
     dependencies:
       bootstrap: 5.0.0-alpha1_popper.js@1.16.1
       popper.js: 1.16.1
     dev: false
     resolution:
-      integrity: sha512-r1S95fD7D9uV2daPgqISfiRNUcnzsWrKJGvqJFhsE2zCPPqIPVeGnxfw8i93GJv9BCyLsY/ezds1X1onZ52lqA==
+      integrity: sha512-//ify0jJu71mwULu/1Bvcy7ZXB3ysz9lORcueweKNGCuMt0/w0vsi1fxXrnWJshhxl2u2jiyJ4M5Z4zOEh+2XA==
   /gensync/1.0.0-beta.1:
     dev: true
     engines:
@@ -2977,10 +2972,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-taOaskGt4z4SOANNseOviYDvjEJinIkRgmp7LbKP2YTTmVxWBl87s/uzK9r+44BclBSp2X7K1hqeNfz9JbBeXA==
-  /he/1.2.0:
-    hasBin: true
-    resolution:
-      integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
   /hmac-drbg/1.0.1:
     dependencies:
       hash.js: 1.1.7
@@ -5843,7 +5834,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
-  /vue-loader/15.9.3_6744650c5da92901421f33388a4899bc:
+  /vue-loader/15.9.3_css-loader@3.6.0+webpack@4.43.0:
     dependencies:
       '@vue/component-compiler-utils': 3.1.2
       css-loader: 3.6.0_webpack@4.43.0
@@ -5851,7 +5842,6 @@ packages:
       loader-utils: 1.4.0
       vue-hot-reload-api: 2.3.4
       vue-style-loader: 4.1.2
-      vue-template-compiler: 2.6.11
       webpack: 4.43.0_webpack@4.43.0
     dev: true
     peerDependencies:
@@ -5866,15 +5856,6 @@ packages:
         optional: true
     resolution:
       integrity: sha512-Y67VnGGgVLH5Voostx8JBZgPQTlDQeOVBLOEsjc2cXbCYBKexSKEpOA56x0YZofoDOTszrLnIShyOX1p9uCEHA==
-  /vue-property-decorator/9.0.0_vue@2.6.11:
-    dependencies:
-      vue: 2.6.11
-    dev: false
-    peerDependencies:
-      vue: '*'
-      vue-class-component: '*'
-    resolution:
-      integrity: sha512-oegTNPItuHOkW0AP1MnbdNwkmyhfsUIIXvIRHpgC18tVoEo21/i6kItyeekjMs8JgZJeuHzsaTc/DZaJFH4IWQ==
   /vue-style-loader/4.1.2:
     dependencies:
       hash-sum: 1.0.2
@@ -5882,12 +5863,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-0ip8ge6Gzz/Bk0iHovU9XAUQaFt/G2B61bnWa2tCcqqdgfHs1lF9xXorFbE55Gmy92okFT+8bfmySuUOu13vxQ==
-  /vue-template-compiler/2.6.11:
-    dependencies:
-      de-indent: 1.0.2
-      he: 1.2.0
-    resolution:
-      integrity: sha512-KIq15bvQDrcCjpGjrAhx4mUlyyHfdmTaoNfeoATHLAiWB+MU3cx4lOzMwrnUh9cCxy0Lt1T11hAFY6TQgroUAA==
   /vue-template-es2015-compiler/1.9.1:
     dev: true
     resolution:
@@ -6168,15 +6143,13 @@ specifiers:
   '@babel/preset-env': ^7.10.4
   babel-loader: ^8.1.0
   css-loader: ^3.6.0
-  gd-bs: ^3.0.6
+  gd-bs: ^3.0.7
   node-sass: ^4.14.1
   sass-loader: ^9.0.1
   style-loader: ^1.2.1
   ts-loader: ^7.0.5
   vue: ^2.6.11
   vue-loader: ^15.9.3
-  vue-property-decorator: ^9.0.0
-  vue-template-compiler: ^2.6.11
   webpack: ^4.43.0
   webpack-cli: ^3.3.12
   webpack-dev-server: ^3.11.0

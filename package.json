@@ -1,8 +1,8 @@
 {
   "name": "gd-bs-vue",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Extends the gd-bs Bootstrap JavaScript components to vue js components.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "webpack --mode=development",
     "prod": "webpack --mode=production",
@@ -20,10 +20,8 @@
   },
   "homepage": "https://github.com/gunjandatta/gd-bs-vue#readme",
   "dependencies": {
-    "gd-bs": "^3.0.6",
-    "vue": "^2.6.11",
-    "vue-property-decorator": "^9.0.0",
-    "vue-template-compiler": "^2.6.11"
+    "gd-bs": "^3.0.7",
+    "vue": "^2.6.11"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
