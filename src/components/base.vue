@@ -16,8 +16,8 @@ export default {
       // Add a watch for this property
       this.$watch(prop, () => {
         // Clear the element
-        while (el.firstChild) {
-          el.removeChild(el.firstChild);
+        while (this.$el.firstChild) {
+          this.$el.removeChild(this.$el.firstChild);
         }
 
         // Re-render the component
