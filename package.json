@@ -1,6 +1,6 @@
 {
   "name": "gd-bs-vue",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Extends the gd-bs Bootstrap JavaScript components to vue js components.",
   "main": "src/index.js",
   "scripts": {

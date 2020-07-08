@@ -10,6 +10,20 @@ export default {
   data: () => ({
     bs: Components.Alert
   }),
+  watch: {
+    content: () => {
+      this.$forceUpdate();
+    },
+    header: () => {
+      this.$forceUpdate();
+    },
+    isDismissible: () => {
+      this.$forceUpdate();
+    },
+    type: () => {
+      this.$forceUpdate();
+    }
+  },
   props: {
     content: { type: String | Object },
     header: { type: String },
