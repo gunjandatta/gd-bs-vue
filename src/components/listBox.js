@@ -1,10 +1,8 @@
-<template></template>
-
-<script>
 import { Components } from "gd-bs";
-import Base from "./base";
+import { Base } from "./base";
+import Vue from "vue";
 
-export default {
+export const ListBox = Vue.extend({
   name: "ListBox",
   extends: Base,
   data: () => ({
@@ -17,7 +15,6 @@ export default {
     multi: { type: Boolean },
     placeholder: { type: String },
     onChange: { type: Function },
-    value: { type: String | Array }
+    value: { type: Array }
   }
-};
-</script>
+});

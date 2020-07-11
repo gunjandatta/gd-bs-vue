@@ -1,10 +1,8 @@
-<template></template>
-
-<script>
 import { Components } from "gd-bs";
-import Base from "./base";
+import { Base } from "./base";
+import Vue from "vue";
 
-export default {
+export const CardGroup = Vue.extend({
   name: "CardGroup",
   extends: Base,
   data: () => ({
@@ -14,5 +12,4 @@ export default {
     cards: { type: Array },
     isDeck: { type: Boolean }
   }
-};
-</script>
+});

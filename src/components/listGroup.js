@@ -1,10 +1,8 @@
-<template></template>
-
-<script>
 import { Components } from "gd-bs";
-import Base from "./base";
+import { Base } from "./base";
+import Vue from "vue";
 
-export default {
+export const ListGroup = Vue.extend({
   name: "ListGroup",
   extends: Base,
   data: () => ({
@@ -18,5 +16,4 @@ export default {
     isTabs: { type: Boolean },
     items: { type: Array }
   }
-};
-</script>
+});

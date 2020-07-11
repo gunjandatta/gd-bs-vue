@@ -1,10 +1,8 @@
-<template></template>
-
-<script>
 import { Components } from "gd-bs";
-import Base from "./base";
+import { Base } from "./base";
+import Vue from "vue";
 
-export default {
+export const Dropdown = Vue.extend({
   name: "Dropdown",
   extends: Base,
   data: () => ({
@@ -30,5 +28,4 @@ export default {
     type: { type: Number },
     value: { type: Object }
   }
-};
-</script>
+});

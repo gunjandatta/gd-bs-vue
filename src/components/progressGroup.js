@@ -1,10 +1,8 @@
-<template></template>
-
-<script>
 import { Components } from "gd-bs";
-import Base from "./base";
+import { Base } from "./base";
+import Vue from "vue";
 
-export default {
+export const ProgressGroup = Vue.extend({
   name: "ProgressGroup",
   extends: Base,
   data: () => ({
@@ -14,5 +12,4 @@ export default {
     isMultiple: { type: Boolean },
     progressbars: { type: Array }
   }
-};
-</script>
+});

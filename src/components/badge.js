@@ -1,10 +1,8 @@
-<template></template>
-
-<script>
 import { Components } from "gd-bs";
-import Base from "./base";
+import { Base } from "./base";
+import Vue from "vue";
 
-export default {
+export const Badge = Vue.extend({
   name: "Badge",
   extends: Base,
   data: () => ({
@@ -19,5 +17,4 @@ export default {
     onClick: { type: Function },
     type: { type: Number }
   }
-};
-</script>
+});

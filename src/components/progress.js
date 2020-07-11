@@ -1,10 +1,8 @@
-<template></template>
-
-<script>
 import { Components } from "gd-bs";
-import Base from "./base";
+import { Base } from "./base";
+import Vue from "vue";
 
-export default {
+export const Progress = Vue.extend({
   name: "Progress",
   extends: Base,
   data: () => ({
@@ -18,5 +16,4 @@ export default {
     min: { type: Number },
     size: { type: Number }
   }
-};
-</script>
+});

@@ -1,20 +1,17 @@
-<template></template>
-
-<script>
 import { Components } from "gd-bs";
-import Base from "./base";
+import { Base } from "./base";
+import Vue from "vue";
 
-export default {
+export const Alert = Vue.extend({
   name: "Alert",
   extends: Base,
   data: () => ({
     bs: Components.Alert
   }),
   props: {
-    content: { type: String | Object },
+    content: { type: Object },
     header: { type: String },
     isDismissible: { type: Boolean },
     type: { type: Number }
   }
-};
-</script>
+});

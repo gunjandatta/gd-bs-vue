@@ -1,9 +1,6 @@
-<template></template>
-
-<script>
 import Vue from "vue";
 
-export default {
+export const Base = Vue.extend({
   name: "Base",
   inheritAttrs: false,
   props: {
@@ -31,5 +28,4 @@ export default {
     // Render the component
     this.$data.bs(this.$props);
   }
-};
-</script>
+});

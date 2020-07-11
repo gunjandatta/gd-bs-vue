@@ -1,17 +1,15 @@
-<template></template>
-
-<script>
 import { Components } from "gd-bs";
-import Base from "./base";
+import { Base } from "./base";
+import Vue from "vue";
 
-export default {
+export const Toast = Vue.extend({
   name: "Toast",
   extends: Base,
   data: () => ({
     bs: Components.Toast
   }),
   props: {
-    body: { type: String | Element },
+    body: { type: Element },
     data: { type: Object },
     headerImgClass: { type: String },
     headerImgSrc: { type: String },
@@ -23,5 +21,4 @@ export default {
     onRenderBody: { type: Function },
     onRenderHeader: { type: Function }
   }
-};
-</script>
+});

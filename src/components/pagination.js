@@ -1,10 +1,8 @@
-<template></template>
-
-<script>
 import { Components } from "gd-bs";
-import Base from "./base";
+import { Base } from "./base";
+import Vue from "vue";
 
-export default {
+export const Pagination = Vue.extend({
   name: "Pagination",
   extends: Base,
   data: () => ({
@@ -18,5 +16,4 @@ export default {
     numberOfPages: { type: Number },
     onClick: { type: Function }
   }
-};
-</script>
+});

@@ -1,10 +1,8 @@
-<template></template>
-
-<script>
 import { Components } from "gd-bs";
-import Base from "./base";
+import { Base } from "./base";
+import Vue from "vue";
 
-export default {
+export const Button = Vue.extend({
   name: "Button",
   extends: Base,
   data: () => ({
@@ -12,7 +10,7 @@ export default {
   }),
   props: {
     badge: { type: Object },
-    controls: { type: String | Array },
+    controls: { type: Array },
     data: { type: Object },
     href: { type: String },
     iconSize: { type: Number },
@@ -33,5 +31,4 @@ export default {
     trigger: { type: String },
     type: { type: Number }
   }
-};
-</script>
+});

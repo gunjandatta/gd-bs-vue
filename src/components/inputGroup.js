@@ -1,10 +1,8 @@
-<template></template>
-
-<script>
 import { Components } from "gd-bs";
-import Base from "./base";
+import { Base } from "./base";
+import Vue from "vue";
 
-export default {
+export const InputGroup = Vue.extend({
   name: "InputGroup",
   extends: Base,
   data: () => ({
@@ -32,5 +30,4 @@ export default {
     type: { type: Number },
     value: { type: String }
   }
-};
-</script>
+});

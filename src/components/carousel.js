@@ -1,10 +1,8 @@
-<template></template>
-
-<script>
 import { Components } from "gd-bs";
-import Base from "./base";
+import { Base } from "./base";
+import Vue from "vue";
 
-export default {
+export const Carousel = Vue.extend({
   name: "Carousel",
   extends: Base,
   data: () => ({
@@ -18,5 +16,4 @@ export default {
     items: { type: Array },
     options: { type: Object }
   }
-};
-</script>
+});

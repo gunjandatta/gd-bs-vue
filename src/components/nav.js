@@ -1,10 +1,8 @@
-<template></template>
-
-<script>
 import { Components } from "gd-bs";
-import Base from "./base";
+import { Base } from "./base";
+import Vue from "vue";
 
-export default {
+export const Nav = Vue.extend({
   name: "Nav",
   extends: Base,
   data: () => ({
@@ -21,5 +19,4 @@ export default {
     isTabs: { type: Boolean },
     isVertical: { type: Boolean }
   }
-};
-</script>
+});

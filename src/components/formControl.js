@@ -1,10 +1,8 @@
-<template></template>
-
-<script>
 import { Components } from "gd-bs";
-import Base from "./base";
+import { Base } from "./base";
+import Vue from "vue";
 
-export default {
+export const FormControl = Vue.extend({
   name: "FormControl",
   extends: Base,
   data: () => ({
@@ -29,5 +27,4 @@ export default {
     type: { type: Number },
     value: { type: Object }
   }
-};
-</script>
+});

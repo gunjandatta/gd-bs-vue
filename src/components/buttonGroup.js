@@ -1,10 +1,8 @@
-<template></template>
-
-<script>
 import { Components } from "gd-bs";
-import Base from "./base";
+import { Base } from "./base";
+import Vue from "vue";
 
-export default {
+export const ButtonGroup = Vue.extend({
   name: "ButtonGroup",
   extends: Base,
   data: () => ({
@@ -19,5 +17,4 @@ export default {
     isVertical: { type: Boolean },
     label: { type: String }
   }
-};
-</script>
+});

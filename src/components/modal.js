@@ -1,19 +1,17 @@
-<template></template>
-
-<script>
 import { Components } from "gd-bs";
-import Base from "./base";
+import { Base } from "./base";
+import Vue from "vue";
 
-export default {
+export const Modal = Vue.extend({
   name: "Modal",
   extends: Base,
   data: () => ({
     bs: Components.Modal
   }),
   props: {
-    body: { type: String | Element },
+    body: { type: Element },
     disableFade: { type: Boolean },
-    footer: { type: String | Element },
+    footer: { type: Element },
     hideCloseButton: { type: Boolean },
     id: { type: String },
     isCentered: { type: Boolean },
@@ -25,5 +23,4 @@ export default {
     title: { type: String },
     type: { type: Number }
   }
-};
-</script>
+});

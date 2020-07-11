@@ -1,10 +1,8 @@
-<template></template>
-
-<script>
 import { Components } from "gd-bs";
-import Base from "./base";
+import { Base } from "./base";
+import Vue from "vue";
 
-export default {
+export const Card = Vue.extend({
   name: "Card",
   extends: Base,
   data: () => ({
@@ -18,5 +16,4 @@ export default {
     imgTop: { type: Object },
     onClick: { type: Function }
   }
-};
-</script>
+});

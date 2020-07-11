@@ -1,10 +1,8 @@
-<template></template>
-
-<script>
 import { Components } from "gd-bs";
-import Base from "./base";
+import { Base } from "./base";
+import Vue from "vue";
 
-export default {
+export const Navbar = Vue.extend({
   name: "Navbar",
   extends: Base,
   data: () => ({
@@ -20,5 +18,4 @@ export default {
     searchBox: { type: Object },
     type: { type: Number }
   }
-};
-</script>
+});
