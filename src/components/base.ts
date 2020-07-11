@@ -7,6 +7,7 @@ export const Base = Vue.extend({
     assignTo: { type: Function },
     className: { type: String }
   },
+  template: "<div></div>",
   mounted() {
     // Parse the props
     for (let prop in this.$props) {
