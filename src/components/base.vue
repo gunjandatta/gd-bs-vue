@@ -25,7 +25,7 @@ export default {
     // Set the element
     this.$props.el = this.$el;
     // Render the component
-    this.$data.bs(this.$props);
+    this.$data.bs ? this.$data.bs(this.$props) : this.$data.init(this.$props);
   }
 };
 </script>
