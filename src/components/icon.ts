@@ -5,11 +5,11 @@ import Vue from "vue";
 export const Icon = Vue.extend({
   name: "Icon",
   extends: Base,
-  data: () => ({
-    init: props => {
-      this.$el.appendChild(Icons(props.type, props.height, props.width));
+  computed: {
+    bsInit() {
+      this.$el.appendChild(Icons(this.$props.type, this.$props.height, this.$props.width));
     }
-  }),
+  },
   props: {
     height: { type: Number },
     type: { type: Number },
