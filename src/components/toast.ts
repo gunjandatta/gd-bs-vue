@@ -9,7 +9,7 @@ export const Toast = Vue.extend({
     bs: Components.Toast
   }),
   props: {
-    body: { type: Element },
+    body: { type: [String, Element] },
     data: { type: Object },
     headerImgClass: { type: String },
     headerImgSrc: { type: String },

@@ -9,7 +9,7 @@ export const Jumbotron = Vue.extend({
     bs: Components.Jumbotron
   }),
   props: {
-    content: { type: Element },
+    content: { type: [String, Element] },
     isFluid: { type: Boolean },
     lead: { type: String },
     onRenderContent: { type: Function },

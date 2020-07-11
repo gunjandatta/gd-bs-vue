@@ -9,9 +9,9 @@ export const Modal = Vue.extend({
     bs: Components.Modal
   }),
   props: {
-    body: { type: Element },
+    body: { type: [String, Element] },
     disableFade: { type: Boolean },
-    footer: { type: Element },
+    footer: { type: [String, Element] },
     hideCloseButton: { type: Boolean },
     id: { type: String },
     isCentered: { type: Boolean },

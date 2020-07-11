@@ -15,6 +15,6 @@ export const ListBox = Vue.extend({
     multi: { type: Boolean },
     placeholder: { type: String },
     onChange: { type: Function },
-    value: { type: Array }
+    value: { type: [String, Array] }
   }
 });

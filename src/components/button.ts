@@ -10,7 +10,7 @@ export const Button = Vue.extend({
   }),
   props: {
     badge: { type: Object },
-    controls: { type: Array },
+    controls: { type: [String, Array] },
     data: { type: Object },
     href: { type: String },
     iconSize: { type: Number },

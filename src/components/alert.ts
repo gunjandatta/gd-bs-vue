@@ -9,7 +9,7 @@ export const Alert = Vue.extend({
     bs: Components.Alert
   }),
   props: {
-    content: { type: Object },
+    content: { type: [String, Object] },
     header: { type: String },
     isDismissible: { type: Boolean },
     type: { type: Number }

@@ -9,7 +9,7 @@ export const Collapse = Vue.extend({
     bs: Components.Collapse
   }),
   props: {
-    content: { type: Object },
+    content: { type: [String, Object] },
     data: { type: Object },
     id: { type: String },
     isMulti: { type: Boolean },
