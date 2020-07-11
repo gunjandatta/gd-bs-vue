@@ -5,9 +5,9 @@ import Vue from "vue";
 export const Icon = Vue.extend({
   name: "Icon",
   extends: Base,
-  computed: {
-    bsInit() {
-      this.$el.appendChild(Icons(this.$props.type, this.$props.height, this.$props.width));
+  data: {
+    render: (props) => {
+      return Icons(props.type, props.height, props.width);
     }
   },
   props: {
