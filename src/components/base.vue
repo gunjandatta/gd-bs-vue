@@ -1,13 +1,14 @@
-import Vue from "vue";
+<template></template>
 
-export const Base = Vue.extend({
+<script>
+import Vue from "vue";
+export default {
   name: "Base",
   inheritAttrs: false,
   props: {
     assignTo: { type: Function },
     className: { type: String }
   },
-  template: "<div></div>",
   mounted() {
     // Parse the props
     for (let prop in this.$props) {
@@ -17,16 +18,14 @@ export const Base = Vue.extend({
         while (this.$el.firstChild) {
           this.$el.removeChild(this.$el.firstChild);
         }
-
         // Re-render the component
         this.$data.bs(this.$props);
       });
     }
-
     // Set the element
     this.$props.el = this.$el;
-
     // Render the component
     this.$data.bs(this.$props);
   }
-});
+};
+</script>

@@ -1,5 +1,5 @@
 import { Components } from "gd-bs";
-import { Base } from "./base";
+import Base from "./base.vue";
 import Vue from "vue";
 
 export const Alert = Vue.extend({
