@@ -21,6 +21,6 @@ export const CheckboxGroup = Vue.extend({
     renderRow: { type: Boolean },
     title: { type: String },
     type: { type: Number },
-    value: { type: Object }
+    value: { type: [String, Object] }
   }
 });
