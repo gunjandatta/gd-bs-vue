@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/gunjandatta/gd-bs-vue#readme",
   "dependencies": {
-    "gd-bs": "^3.1.0",
+    "gd-bs": "*",
     "vue": "^2.6.11"
   },
   "devDependencies": {
