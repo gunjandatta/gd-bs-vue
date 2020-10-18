@@ -60,7 +60,7 @@ var Base = /** @class */ (function (_super) {
         // Set the element
         this.$props.el = this.$el;
         // Render the component
-        this.$data.bs(this.$props);
+        this._bs(this.$props);
     };
     __decorate([
         vue_property_decorator_1.Prop(Function)

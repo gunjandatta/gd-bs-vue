@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
-        "experimentalDecorators": true,
         "declaration": true,
+        "experimentalDecorators": true,
         "outDir": "build",
         "target": "es5"
     },
