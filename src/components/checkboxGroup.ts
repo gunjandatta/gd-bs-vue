@@ -1,26 +1,29 @@
 import { Components } from "gd-bs";
-import Base from "./base.vue";
-import Vue from "vue";
+import { Base } from "./base";
+import { Component, Prop } from "vue-property-decorator";
 
-export const CheckboxGroup = Vue.extend({
-  name: "CheckboxGroup",
-  extends: Base,
-  data: () => ({
-    bs: Components.CheckboxGroup
-  }),
-  props: {
-    colSize: { type: Number },
-    hideLabel: { type: Boolean },
-    isInline: { type: Boolean },
-    isReadonly: { type: Boolean },
-    label: { type: String },
-    items: { type: Array },
-    multi: { type: Boolean },
-    onRender: { type: Function },
-    onChange: { type: Function },
-    renderRow: { type: Boolean },
-    title: { type: String },
-    type: { type: Number },
-    value: { type: [String, Object] }
+@Component
+export class CheckboxGroup extends Base<Components.ICheckboxGroup> {
+  // Properties
+  @Prop(Number) colSize: number;
+  @Prop(Boolean) hideLabel: boolean;
+  @Prop(Boolean) isInline: boolean;
+  @Prop(Boolean) isReadonly: boolean;
+  @Prop(String) label: string;
+  @Prop(Array) items: Array<Components.ICheckboxGroupItem>;
+  @Prop(Boolean) multi: boolean;
+  @Prop(Function) onRender: (el?: HTMLElement, item?: Components.ICheckboxGroupItem) => void;
+  @Prop(Function) onChange: (items: Components.ICheckboxGroupItem | Array<Components.ICheckboxGroupItem>) => void;
+  @Prop(Boolean) renderRow: boolean;
+  @Prop(String) title: string;
+  @Prop(Number) type: number;
+  @Prop([String, Object]) value: { type: [String, Object] }
+
+  // Constructor
+  constructor() {
+    super();
+
+    // Set the bs component
+    this._bs = Components.CheckboxGroup;
   }
-});
+}

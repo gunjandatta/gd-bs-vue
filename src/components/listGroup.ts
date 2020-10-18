@@ -1,19 +1,22 @@
 import { Components } from "gd-bs";
-import Base from "./base.vue";
-import Vue from "vue";
+import { Base } from "./base";
+import { Component, Prop } from "vue-property-decorator";
 
-export const ListGroup = Vue.extend({
-  name: "ListGroup",
-  extends: Base,
-  data: () => ({
-    bs: Components.ListGroup
-  }),
-  props: {
-    colWidth: { type: Number },
-    fadeTabs: { type: Boolean },
-    isFlush: { type: Boolean },
-    isHorizontal: { type: Boolean },
-    isTabs: { type: Boolean },
-    items: { type: Array }
+@Component
+export class ListGroup extends Base<Components.IListGroup> {
+  // Properties
+  @Prop(Number) colWidth: number;
+  @Prop(Boolean) fadeTabs: boolean;
+  @Prop(Boolean) isFlush: boolean;
+  @Prop(Boolean) isHorizontal: boolean;
+  @Prop(Boolean) isTabs: boolean;
+  @Prop(Array) items: Array<Components.IListGroupItem<Element>>;
+
+  // Constructor
+  constructor() {
+    super();
+
+    // Set the bs component
+    this._bs = Components.ListGroup;
   }
-});
+}

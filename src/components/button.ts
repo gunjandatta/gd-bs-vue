@@ -1,34 +1,37 @@
 import { Components } from "gd-bs";
-import Base from "./base.vue";
-import Vue from "vue";
+import { Base } from "./base";
+import { Component, Prop } from "vue-property-decorator";
 
-export const Button = Vue.extend({
-  name: "Button",
-  extends: Base,
-  data: () => ({
-    bs: Components.Button
-  }),
-  props: {
-    badge: { type: Object },
-    controls: { type: [String, Array] },
-    data: { type: Object },
-    href: { type: String },
-    iconSize: { type: Number },
-    iconType: { type: Number },
-    id: { type: String },
-    isBlock: { type: Boolean },
-    isDisabled: { type: Boolean },
-    isExpanded: { type: Boolean },
-    isLarge: { type: Boolean },
-    isLink: { type: Boolean },
-    isSmall: { type: Boolean },
-    onClick: { type: Function },
-    spinnerProps: { type: Object },
-    target: { type: String },
-    text: { type: String },
-    title: { type: String },
-    toggle: { type: String },
-    trigger: { type: String },
-    type: { type: Number }
+@Component
+export class Button extends Base<Components.IButton> {
+  // Properties
+  @Prop(Object) badge: Components.IBadgeProps;
+  @Prop([String, Array]) controls: string | Array<string>;
+  @Prop(Object) data: any;
+  @Prop(String) href: string;
+  @Prop(Number) iconSize: number;
+  @Prop(Number) iconType: number;
+  @Prop(String) id: string;
+  @Prop(Boolean) isBlock: boolean;
+  @Prop(Boolean) isDisabled: boolean;
+  @Prop(Boolean) isExpanded: boolean;
+  @Prop(Boolean) isLarge: boolean;
+  @Prop(Boolean) isLink: boolean;
+  @Prop(Boolean) isSmall: boolean;
+  @Prop(Function) onClick: (button?: Components.IButtonProps, ev?: Event) => void;
+  @Prop(Object) spinnerProps: Components.ISpinnerProps;
+  @Prop(String) target: string;
+  @Prop(String) text: string;
+  @Prop(String) title: string;
+  @Prop(String) toggle: string;
+  @Prop(String) trigger: string;
+  @Prop(Number) type: { type: Number }
+
+  // Constructor
+  constructor() {
+    super();
+
+    // Set the bs component
+    this._bs = Components.Button;
   }
-});
+}

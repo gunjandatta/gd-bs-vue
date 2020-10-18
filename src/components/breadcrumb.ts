@@ -1,15 +1,18 @@
 import { Components } from "gd-bs";
-import Base from "./base.vue";
-import Vue from "vue";
+import { Base } from "./base";
+import { Component, Prop } from "vue-property-decorator";
 
-export const Breadcrumb = Vue.extend({
-  name: "Breadcrumb",
-  extends: Base,
-  data: () => ({
-    bs: Components.Breadcrumb
-  }),
-  props: {
-    items: { type: Array },
-    onClick: { type: Function }
+@Component
+export class Breadcrumb extends Base<Components.IBreadcrumb> {
+  // Properties
+  @Prop(Array) items: Array<Components.IBreadcrumbItem>;
+  @Prop(Function) onClick: (item?: Components.IBreadcrumbItem, ev?: Event) => void;
+
+  // Constructor
+  constructor() {
+    super();
+
+    // Set the bs component
+    this._bs = Components.Breadcrumb;
   }
-});
+}

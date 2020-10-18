@@ -1,16 +1,19 @@
 import { Components } from "gd-bs";
-import Base from "./base.vue";
-import Vue from "vue";
+import { Base } from "./base";
+import { Component, Prop } from "vue-property-decorator";
 
-export const Accordion = Vue.extend({
-  name: "Accordion",
-  extends: Base,
-  data: () => ({
-    bs: Components.Accordion
-  }),
-  props: {
-    id: { type: String },
-    items: { type: Array },
-    options: { type: Object }
+@Component
+export class Accordion extends Base<Components.IAccordion> {
+  // Properties
+  @Prop(String) id: string;
+  @Prop(Array) items: Array<Components.IAccordionItem>;
+  @Prop(Object) options: Components.IAccordionOptions;
+
+  // Constructor
+  constructor() {
+    super();
+
+    // Set the bs component
+    this._bs = Components.Accordion;
   }
-});
+}

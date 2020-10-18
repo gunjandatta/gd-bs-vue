@@ -1,19 +1,22 @@
 import { Components } from "gd-bs";
-import Base from "./base.vue";
-import Vue from "vue";
+import { Base } from "./base";
+import { Component, Prop } from "vue-property-decorator";
 
-export const Carousel = Vue.extend({
-  name: "Carousel",
-  extends: Base,
-  data: () => ({
-    bs: Components.Carousel
-  }),
-  props: {
-    enableControls: { type: Boolean },
-    enableCrossfade: { type: Boolean },
-    enableIndicators: { type: Boolean },
-    id: { type: String },
-    items: { type: Array },
-    options: { type: Object }
+@Component
+export class Carousel extends Base<Components.ICarousel> {
+  // Properties
+  @Prop(Boolean) enableControls: boolean;
+  @Prop(Boolean) enableCrossfade: boolean;
+  @Prop(Boolean) enableIndicators: boolean;
+  @Prop(String) id: string;
+  @Prop(Array) items: Array<Components.ICarouselItem>;
+  @Prop(Object) options: Components.ICarouselOptions;
+
+  // Constructor
+  constructor() {
+    super();
+
+    // Set the bs component
+    this._bs = Components.Carousel;
   }
-});
+}
