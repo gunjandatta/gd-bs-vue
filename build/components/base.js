@@ -58,7 +58,7 @@ var Base = /** @class */ (function (_super) {
             });
         }
         // Set the element
-        this.$props.el = this.$el;
+        this.$props.el = this.$el.nodeType == Node.COMMENT_NODE ? this.$el.parentElement : this.$el;
         // Render the component
         this.$data._bs(this.$props);
     };
