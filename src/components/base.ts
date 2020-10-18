@@ -46,7 +46,7 @@ export class Base<T = any> extends Vue {
         this.$props.el = this.$el;
 
         // Render the component
-        this._bs(this.$props);
+        this.$data._bs(this.$props);
     }
 }
 
