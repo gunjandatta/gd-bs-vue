@@ -1,20 +1,17 @@
 import { Components } from "gd-bs";
-import { Base } from "./base";
-import { Component, Prop } from "vue-property-decorator";
+import Base from "./base.vue";
+import Vue from "vue";
 
-@Component
-export class Alert extends Base<Components.IAlert> {
-  // Properties
-  @Prop([String, Object]) content: string | Element;
-  @Prop(String) header: string;
-  @Prop(Boolean) isDismissible: boolean;
-  @Prop(Number) type: number;
-
-  // Constructor
-  constructor() {
-    super();
-
-    // Set the bs component
-    this._bs = Components.Alert;
+export const Alert = Vue.extend({
+  name: "Alert",
+  extends: Base,
+  data: () => ({
+    bs: Components.Alert
+  }),
+  props: {
+    content: { type: [String, Object] },
+    header: { type: String },
+    isDismissible: { type: Boolean },
+    type: { type: Number }
   }
-}
+});

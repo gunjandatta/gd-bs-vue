@@ -1,23 +1,20 @@
 import { Components } from "gd-bs";
-import { Base } from "./base";
-import { Component, Prop } from "vue-property-decorator";
+import Base from "./base.vue";
+import Vue from "vue";
 
-@Component
-export class Badge extends Base<Components.IBadge> {
-  // Properties
-  @Prop([String, Object]) content: string | Element;
-  @Prop(Object) data: any;
-  @Prop(String) header: string;
-  @Prop(String) href: string;
-  @Prop(Boolean) isPill: boolean;
-  @Prop(Function) onClick: (badge?: Components.IBadge, ev?: Event) => void;
-  @Prop(Number) type: number;
-
-  // Constructor
-  constructor() {
-    super();
-
-    // Set the bs component
-    this._bs = Components.Badge;
+export const Badge = Vue.extend({
+  name: "Badge",
+  extends: Base,
+  data: () => ({
+    bs: Components.Badge
+  }),
+  props: {
+    content: { type: Object },
+    data: { type: Object },
+    header: { type: String },
+    href: { type: String },
+    isPill: { type: Boolean },
+    onClick: { type: Function },
+    type: { type: Number }
   }
-}
+});

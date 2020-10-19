@@ -1,22 +1,19 @@
 import { Components } from "gd-bs";
-import { Base } from "./base";
-import { Component, Prop } from "vue-property-decorator";
+import Base from "./base.vue";
+import Vue from "vue";
 
-@Component
-export class Collapse extends Base<Components.ICollapse> {
-  // Properties
-  @Prop([String, Object]) content: string | Element;
-  @Prop(Object) data: any;
-  @Prop(String) id: string;
-  @Prop(Boolean) isMulti: boolean;
-  @Prop(Function) onRender: (props?: Components.ICollapseProps, el?: HTMLElement) => void;
-  @Prop(Object) options: Components.ICollapseOptions;
-
-  // Constructor
-  constructor() {
-    super();
-
-    // Set the bs component
-    this._bs = Components.Collapse;
+export const Collapse = Vue.extend({
+  name: "Collapse",
+  extends: Base,
+  data: () => ({
+    bs: Components.Collapse
+  }),
+  props: {
+    content: { type: [String, Object] },
+    data: { type: Object },
+    id: { type: String },
+    isMulti: { type: Boolean },
+    onRender: { type: Function },
+    options: { type: Object }
   }
-}
+});

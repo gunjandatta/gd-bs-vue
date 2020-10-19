@@ -1,22 +1,19 @@
 import { Components } from "gd-bs";
-import { Base } from "./base";
-import { Component, Prop } from "vue-property-decorator";
+import Base from "./base.vue";
+import Vue from "vue";
 
-@Component
-export class Progress extends Base<Components.IProgress> {
-  // Properties
-  @Prop(Boolean) isAnimated: boolean;
-  @Prop(Boolean) isStriped: boolean;
-  @Prop(String) label: string;
-  @Prop(Number) max: number;
-  @Prop(Number) min: number;
-  @Prop(Number) size: number;
-
-  // Constructor
-  constructor() {
-    super();
-
-    // Set the bs component
-    this._bs = Components.Progress;
+export const Progress = Vue.extend({
+  name: "Progress",
+  extends: Base,
+  data: () => ({
+    bs: Components.Progress
+  }),
+  props: {
+    isAnimated: { type: Boolean },
+    isStriped: { type: Boolean },
+    label: { type: String },
+    max: { type: Number },
+    min: { type: Number },
+    size: { type: Number }
   }
-}
+});

@@ -1,21 +1,18 @@
 import { Components } from "gd-bs";
-import { Base } from "./base";
-import { Component, Prop } from "vue-property-decorator";
+import Base from "./base.vue";
+import Vue from "vue";
 
-@Component
-export class Jumbotron extends Base<Components.IJumbotron> {
-  // Properties
-  @Prop([String, Element]) content: string | Element;
-  @Prop(Boolean) isFluid: boolean;
-  @Prop(String) lead: string;
-  @Prop(Function) onRenderContent: (el?: HTMLElement) => void;
-  @Prop(String) title: string;
-
-  // Constructor
-  constructor() {
-    super();
-
-    // Set the bs component
-    this._bs = Components.Jumbotron;
+export const Jumbotron = Vue.extend({
+  name: "Jumbotron",
+  extends: Base,
+  data: () => ({
+    bs: Components.Jumbotron
+  }),
+  props: {
+    content: { type: [String, Element] },
+    isFluid: { type: Boolean },
+    lead: { type: String },
+    onRenderContent: { type: Function },
+    title: { type: String }
   }
-}
+});

@@ -1,24 +1,21 @@
 import { Components } from "gd-bs";
-import { Base } from "./base";
-import { Component, Prop } from "vue-property-decorator";
+import Base from "./base.vue";
+import Vue from "vue";
 
-@Component
-export class Navbar extends Base<Components.INavbar> {
-  // Properties
-  @Prop(String) brand: string;
-  @Prop(String) brandUrl: string;
-  @Prop(Boolean) enableSearch: boolean;
-  @Prop(String) id: string;
-  @Prop(Array) items: Array<Components.INavbarItem>;
-  @Prop(Function) onClick: (item?: Components.INavbarItem, ev?: Event) => void;
-  @Prop(Object) searchBox: Components.INavbarSearchBox
-  @Prop(Number) type: number;
-
-  // Constructor
-  constructor() {
-    super();
-
-    // Set the bs component
-    this._bs = Components.Navbar;
+export const Navbar = Vue.extend({
+  name: "Navbar",
+  extends: Base,
+  data: () => ({
+    bs: Components.Navbar
+  }),
+  props: {
+    brand: { type: String },
+    brandUrl: { type: String },
+    enableSearch: { type: Boolean },
+    id: { type: String },
+    items: { type: Array },
+    onClick: { type: Function },
+    searchBox: { type: Object },
+    type: { type: Number }
   }
-}
+});

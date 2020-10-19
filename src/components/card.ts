@@ -1,28 +1,19 @@
 import { Components } from "gd-bs";
-import { Base } from "./base";
-import { Component, Prop } from "vue-property-decorator";
+import Base from "./base.vue";
+import Vue from "vue";
 
-@Component
-export class Card extends Base<Components.ICard> {
-  // Properties
-  @Prop(Array) body: Array<Components.ICardBody<Element>>;
-  @Prop(Object) footer: Components.ICardFooter<Element>;
-  @Prop(Object) header: Components.ICardHeader<Element>;
-  @Prop(Object) imgBottom: {
-    alt?: string;
-    src?: string;
+export const Card = Vue.extend({
+  name: "Card",
+  extends: Base,
+  data: () => ({
+    bs: Components.Card
+  }),
+  props: {
+    body: { type: Array },
+    footer: { type: Object },
+    header: { type: Object },
+    imgBottom: { type: Object },
+    imgTop: { type: Object },
+    onClick: { type: Function }
   }
-  @Prop(Object) imgTop: {
-    alt?: string;
-    src?: string;
-  }
-  @Prop(Function) onClick: (card?: Components.ICardBody, ev?: Event) => void;
-
-  // Constructor
-  constructor() {
-    super();
-
-    // Set the bs component
-    this._bs = Components.Card;
-  }
-}
+});
