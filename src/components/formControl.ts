@@ -17,7 +17,6 @@ export const FormControl = Vue.extend({
     isInline: { type: Boolean },
     isReadonly: { type: Boolean },
     isPlainText: { type: Boolean },
-    items: { type: Array },
     label: { type: String },
     loadingMessage: { type: String },
     max: { type: Number },
