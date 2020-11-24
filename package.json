@@ -20,11 +20,12 @@
   },
   "homepage": "https://github.com/gunjandatta/gd-bs-vue#readme",
   "peerDependencies": {
-    "gd-bs": "*",
+    "gd-sprest-bs": "*",
     "vue": "*"
   },
   "devDependencies": {
     "gd-bs": "*",
+    "gd-sprest-bs": "*",
     "vue": "*"
   }
 }

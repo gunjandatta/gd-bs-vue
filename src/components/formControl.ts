@@ -25,6 +25,6 @@ export const FormControl = Vue.extend({
     required: { type: Boolean },
     title: { type: String },
     type: { type: Number },
-    value: { type: [String, Object] }
+    value: { type: [String, Number, Object] }
   }
 });
