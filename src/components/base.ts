@@ -12,8 +12,6 @@ export default {
         let updateFl = false;
         // Parse the props
         for (let prop in this.$props) {
-            // Skip the items property
-            if (prop == "items") { continue; }
             // Add a watch for this property
             this.$watch(prop, () => {
                 // See if an update is not taking place
