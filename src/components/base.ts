@@ -11,42 +11,50 @@ export default {
         className: { type: String },
     },
     methods: {
-        convertElements(props) {
-            // Parse the props
-            for (let prop in props) {
+        convertElements(prop) {
+            // Ensure a value exists
+            if (prop == null) { return; }
+
+            // See if the property is VueJS component
+            if (prop.components) {
+                // Create an element
+                let el = document.createElement("div");
+
+                // Render the component to it
+                new Vue({ el, render: h => h(prop) });
+
+                // Return the element
+                return el;
+            }
+
+            // Parse the object
+            for (let key in prop) {
                 // Ensure a value exists
-                let value = props[prop];
+                let value = prop[key];
                 if (value == null) { continue; }
 
-                // See if this is an array
-                if (typeof (value) !== "string" && value.length > 0) {
-                    // Convert the element
-                    this.convertElements(value);
-                    continue;
-                }
+                // Ensure this is not a function
+                if (typeof (value) === "function") { continue; }
 
-                // See if the property is VueJS component
-                if (value.components) {
-                    // Create an element
-                    let el = document.createElement("div");
-
-                    // Render the component to it
-                    new Vue({ el, render: h => h(value) });
-
-                    // Set the property
-                    props[prop] = el;
+                // See if it's an object
+                if (typeof (value) === "object") {
+                    // Convert the elements
+                    prop[key] = this.convertElements(value);
                 }
             }
+
+            // Return the prop
+            return prop;
         }
     },
     mounted() {
         let updateFl = false;
 
-        // Parse the props
-        for (let prop in this.$props) {
-            // Convert the VueJS components to elements
-            this.convertElements(prop);
+        // Convert the VueJS components to elements
+        //let props = this.convertElements(this.$props);
 
+        // Parse the props
+        for (let prop in props) {
             // Add a watch for this property
             this.$watch(prop, () => {
                 // See if an update is not taking place
@@ -63,14 +71,14 @@ export default {
                         // Set the flag
                         updateFl = false;
                         // Re-render the component
-                        this.$data.bs(this.$props);
+                        this.$data.bs(props);
                     }, 100);
                 }
             });
         }
         // Set the element
-        this.$props.el = this.$el.nodeType == Node.COMMENT_NODE ? this.$el.parentElement : this.$el;
+        props.el = this.$el.nodeType == Node.COMMENT_NODE ? this.$el.parentElement : this.$el;
         // Render the component
-        this.$data.bs(this.$props);
+        this.$data.bs(props);
     }
 }
