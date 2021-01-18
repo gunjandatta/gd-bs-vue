@@ -11,9 +11,12 @@ export default {
         className: { type: String },
     },
     methods: {
-        convertElements(prop) {
+        convertElements(prop, level = 0) {
+            // Ensure we haven't passed the max levels
+            if (level > 5) { return prop; }
+
             // Ensure a value exists
-            if (prop == null) { return; }
+            if (prop == null) { return prop; }
 
             // See if the property is VueJS component
             if (prop.components) {
@@ -38,8 +41,16 @@ export default {
 
                 // See if it's an object
                 if (typeof (value) === "object") {
-                    // Convert the elements
-                    prop[key] = this.convertElements(value);
+                    // See if this is an array
+                    if (typeof (value.length) === "number") {
+                        // Parse the items
+                        for (let i = 0; i < value.length; i++) {
+                            value[i] = this.convertElements(value[i]);
+                        }
+                    } else {
+                        // Convert the object
+                        prop[key] = this.convertElements(value);
+                    }
                 }
             }
 
