@@ -10,22 +10,42 @@ export default {
         assignTo: { type: Function },
         className: { type: String },
     },
+    methods: {
+        convertElements(props) {
+            // Parse the props
+            for (let prop in props) {
+                // Ensure a value exists
+                let value = props[prop];
+                if (value == null) { continue; }
+
+                // See if this is an array
+                if (typeof (value) !== "string" && value.length > 0) {
+                    // Convert the element
+                    this.convertElements(value);
+                    continue;
+                }
+
+                // See if the property is VueJS component
+                if (value.components) {
+                    // Create an element
+                    let el = document.createElement("div");
+
+                    // Render the component to it
+                    new Vue({ el, render: h => h(value) });
+
+                    // Set the property
+                    props[prop] = el;
+                }
+            }
+        }
+    },
     mounted() {
         let updateFl = false;
+
         // Parse the props
         for (let prop in this.$props) {
-            // See if the property is VueJS component
-            let value = this.$props[prop];
-            if (value && value.components) {
-                // Create an element
-                let el = document.createElement("div");
-
-                // Render the component to it
-                new Vue({ el, render: h => h(value) });
-
-                // Set the property
-                this.$props[prop] = el;
-            }
+            // Convert the VueJS components to elements
+            this.convertElements(prop);
 
             // Add a watch for this property
             this.$watch(prop, () => {
