@@ -32,6 +32,9 @@ export default {
 
             // Parse the object
             for (let key in prop) {
+                // Skip internal objects
+                if (key[0] == '_') { continue; }
+
                 // Ensure a value exists
                 let value = prop[key];
                 if (value == null) { continue; }
