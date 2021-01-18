@@ -51,7 +51,6 @@ export default {
         let updateFl = false;
 
         // Convert the VueJS components to elements
-        //let props = this.$props;
         let props = this.convertElements(this.$props);
 
         // Parse the props
@@ -62,6 +61,7 @@ export default {
                 if (!updateFl) {
                     // Set the flag
                     updateFl = true;
+
                     // Wait for any other changes to occur before updating the element
                     setTimeout(() => {
                         // Clear the element
@@ -69,16 +69,20 @@ export default {
                             // Remove the child
                             this.$el.removeChild(this.$el.firstChild);
                         }
+
                         // Set the flag
                         updateFl = false;
+
                         // Re-render the component
                         this.$data.bs(props);
                     }, 100);
                 }
             });
         }
+
         // Set the element
         props.el = this.$el.nodeType == Node.COMMENT_NODE ? this.$el.parentElement : this.$el;
+
         // Render the component
         this.$data.bs(props);
     }
