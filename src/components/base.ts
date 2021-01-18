@@ -54,7 +54,7 @@ export default {
         //let props = this.convertElements(this.$props);
 
         // Parse the props
-        for (let prop in props) {
+        for (let prop in this.$props) {
             // Add a watch for this property
             this.$watch(prop, () => {
                 // See if an update is not taking place
