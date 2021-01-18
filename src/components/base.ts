@@ -48,11 +48,14 @@ export default {
                     if (typeof (value.length) === "number") {
                         // Parse the items
                         for (let i = 0; i < value.length; i++) {
-                            value[i] = this.convertElements(value[i], level + 1);
+                            // Convert the VueJS objects to elements
+                            let newProp = this.convertElements(value[i], level + 1);
+                            if (newProp != value[i]) { value[i] = newProp; }
                         }
                     } else {
-                        // Convert the object
-                        prop[key] = this.convertElements(value, level + 1);
+                        // Convert the VueJS objects to elements
+                        let newProp = this.convertElements(value, level + 1);
+                        if (newProp != prop[key]) { prop[key] = newProp; }
                     }
                 }
             }
