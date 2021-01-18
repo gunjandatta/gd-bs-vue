@@ -21,7 +21,7 @@ export default {
                 let el = document.createElement("div");
 
                 // Render the component to it
-                new Vue({ el, render: h => h(prop) });
+                setTimeout(() => { new Vue({ el, render: h => h(prop) }); }, 10);
 
                 // Return the element
                 return el;
@@ -51,7 +51,8 @@ export default {
         let updateFl = false;
 
         // Convert the VueJS components to elements
-        let props = this.$props; //this.convertElements(this.$props);
+        //let props = this.$props;
+        let props = this.convertElements(this.$props);
 
         // Parse the props
         for (let prop in props) {
