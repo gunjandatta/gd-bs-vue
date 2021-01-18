@@ -1,3 +1,5 @@
+import Vue from "vue";
+
 /**
  * Base Template
  */
@@ -12,6 +14,19 @@ export default {
         let updateFl = false;
         // Parse the props
         for (let prop in this.$props) {
+            // See if the property is VueJS component
+            let value = this.$props[prop];
+            if (value && value.components) {
+                // Create an element
+                let el = document.createElement("div");
+
+                // Render the component to it
+                new Vue({ el, render: h => h(value) });
+
+                // Set the property
+                this.$props[prop] = el;
+            }
+
             // Add a watch for this property
             this.$watch(prop, () => {
                 // See if an update is not taking place
