@@ -51,10 +51,10 @@ export default {
         let updateFl = false;
 
         // Convert the VueJS components to elements
-        //let props = this.convertElements(this.$props);
+        let props = this.$props; //this.convertElements(this.$props);
 
         // Parse the props
-        for (let prop in this.$props) {
+        for (let prop in props) {
             // Add a watch for this property
             this.$watch(prop, () => {
                 // See if an update is not taking place
