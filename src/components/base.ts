@@ -45,11 +45,11 @@ export default {
                     if (typeof (value.length) === "number") {
                         // Parse the items
                         for (let i = 0; i < value.length; i++) {
-                            value[i] = this.convertElements(value[i]);
+                            value[i] = this.convertElements(value[i], level + 1);
                         }
                     } else {
                         // Convert the object
-                        prop[key] = this.convertElements(value);
+                        prop[key] = this.convertElements(value, level + 1);
                     }
                 }
             }
