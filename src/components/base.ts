@@ -1,9 +1,8 @@
 import Vue from "vue";
 
 /** Router/Store info to pass on to the VueJS components */
-declare var GD;
-export const setRouter = (router) => { GD["_router"] = router; }
-export const setStore = (store) => { GD["_store"] = store; }
+export const setRouter = (router) => { window["GD"]._router = router; }
+export const setStore = (store) => { window["GD"]._store = store; }
 
 /**
  * Base Template
@@ -30,8 +29,8 @@ export default {
 
                 // Set the vue props
                 let props = { el, render: h => h(prop) };
-                GD._router ? props["router"] = GD["_router"] : null;
-                GD._store ? props["store"] = GD["_store"] : null;
+                window["GD"]._router ? props["router"] = window["GD"]._router : null;
+                window["GD"]._store ? props["store"] = window["GD"]._store : null;
 
                 // Render the component to it
                 setTimeout(() => { new Vue(props); }, 10);
