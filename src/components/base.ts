@@ -1,5 +1,9 @@
 import Vue from "vue";
 
+const VueInfo = { router: null, store: null };
+export const setRouter = (router) => { VueInfo.router = router; }
+export const setStore = (store) => { VueInfo.store = store; }
+
 /**
  * Base Template
  */
@@ -23,8 +27,13 @@ export default {
                 // Create an element
                 let el = document.createElement("div");
 
+                // Set the vue props
+                let props: any = { el, render: h => h(prop) };
+                VueInfo.router ? props.router = VueInfo.router : null;
+                VueInfo.store ? props.store = VueInfo.store : null;
+
                 // Render the component to it
-                setTimeout(() => { new Vue({ el, render: h => h(prop) }); }, 10);
+                setTimeout(() => { new Vue(props); }, 10);
 
                 // Return the element
                 return el;
