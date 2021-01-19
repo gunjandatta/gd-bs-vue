@@ -28,9 +28,9 @@ export default {
                 let el = document.createElement("div");
 
                 // Set the vue props
-                let props: any = { el, render: h => h(prop) };
-                VueInfo.router ? props.router = VueInfo.router : null;
-                VueInfo.store ? props.store = VueInfo.store : null;
+                let props = { el, render: h => h(prop) };
+                VueInfo.router ? props["router"] = VueInfo.router : null;
+                VueInfo.store ? props["store"] = VueInfo.store : null;
 
                 // Render the component to it
                 setTimeout(() => { new Vue(props); }, 10);
