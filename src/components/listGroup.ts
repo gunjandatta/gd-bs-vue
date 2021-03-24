@@ -13,6 +13,7 @@ export const ListGroup = Vue.extend({
     fadeTabs: { type: Boolean },
     isFlush: { type: Boolean },
     isHorizontal: { type: Boolean },
+    isNumbered: { type: Boolean },
     isTabs: { type: Boolean },
     items: { type: Array }
   }
