@@ -13,7 +13,6 @@ export * from "./components/collapse";
 export * from "./components/dropdown";
 export * from "./components/form";
 export * from "./components/formControl";
-export * from "./components/icon";
 export * from "./components/inputGroup";
 export * from "./components/jumbotron";
 export * from "./components/listBox";
