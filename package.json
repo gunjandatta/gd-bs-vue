@@ -1,31 +1,31 @@
 {
-  "name": "gd-bs-vue",
-  "version": "0.6.8",
-  "description": "Extends the gd-bs Bootstrap JavaScript components to vue js components.",
-  "main": "src/index.ts",
-  "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gunjandatta/gd-bs-vue.git"
-  },
-  "keywords": [
-    "Bootstrap",
-    "Vue",
-    "VueJS"
-  ],
-  "author": "Gunjan Datta <me@dattabase.com> (https://dattabase.com)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/gunjandatta/gd-bs-vue/issues"
-  },
-  "homepage": "https://github.com/gunjandatta/gd-bs-vue#readme",
-  "peerDependencies": {
-    "gd-sprest-bs": "*",
-    "vue": "*"
-  },
-  "devDependencies": {
-    "gd-bs": "*",
-    "gd-sprest-bs": "*",
-    "vue": "*"
-  }
+    "name": "gd-bs-vue",
+    "version": "0.6.9",
+    "description": "Extends the gd-bs Bootstrap JavaScript components to vue js components.",
+    "main": "src/index.ts",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gunjandatta/gd-bs-vue.git"
+    },
+    "keywords": [
+        "Bootstrap",
+        "Vue",
+        "VueJS"
+    ],
+    "author": "Gunjan Datta <me@dattabase.com> (https://dattabase.com)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/gunjandatta/gd-bs-vue/issues"
+    },
+    "homepage": "https://github.com/gunjandatta/gd-bs-vue#readme",
+    "peerDependencies": {
+        "gd-sprest-bs": "*",
+        "vue": "*"
+    },
+    "devDependencies": {
+        "gd-bs": "*",
+        "gd-sprest-bs": "*",
+        "vue": "*"
+    }
 }

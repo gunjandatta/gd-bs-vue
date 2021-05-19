@@ -9,7 +9,7 @@ export const Navbar = Vue.extend({
     bs: Components.Navbar
   }),
   props: {
-    brand: { type: [String, Object] },
+    brand: { type: [String, SVGSVGElement] },
     brandUrl: { type: String },
     enableSearch: { type: Boolean },
     id: { type: String },
