@@ -15,7 +15,6 @@ export const Modal = Vue.extend({
     hideCloseButton: { type: Boolean },
     id: { type: String },
     isCentered: { type: Boolean },
-    isStatic: { type: Boolean },
     onClose: { type: Function },
     onRenderBody: { type: Function },
     onRenderFooter: { type: Function },

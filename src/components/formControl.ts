@@ -13,8 +13,7 @@ export const FormControl = Vue.extend({
     data: { type: Object },
     description: { type: String },
     errorMessage: { type: String },
-    hideLabel: { type: Boolean },
-    isInline: { type: Boolean },
+    id: { type: String },
     isReadonly: { type: Boolean },
     isPlainText: { type: Boolean },
     items: { type: Array },
@@ -34,6 +33,7 @@ export const FormControl = Vue.extend({
     required: { type: Boolean },
     title: { type: String },
     type: { type: Number },
+    validationType: { type: Number },
     value: { type: [String, Number, Object] }
   }
 });

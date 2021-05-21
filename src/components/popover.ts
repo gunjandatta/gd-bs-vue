@@ -13,6 +13,7 @@ export const Popover = Vue.extend({
     isDismissible: { type: Boolean },
     options: { type: Object },
     target: { type: Object },
+    title: { type: Object },
     type: { type: Number }
   }
 });

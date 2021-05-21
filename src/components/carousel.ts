@@ -13,6 +13,7 @@ export const Carousel = Vue.extend({
     enableCrossfade: { type: Boolean },
     enableIndicators: { type: Boolean },
     id: { type: String },
+    isDark: { type: Boolean },
     items: { type: Array },
     options: { type: Object }
   }

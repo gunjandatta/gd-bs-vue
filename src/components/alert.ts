@@ -10,8 +10,10 @@ export const Alert = Vue.extend({
   }),
   props: {
     content: { type: [String, Object] },
+    data: { type: [String, Object] },
     header: { type: String },
     isDismissible: { type: Boolean },
+    onClose: { type: Function },
     type: { type: Number }
   }
 });

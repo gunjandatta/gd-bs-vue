@@ -10,6 +10,5 @@ export const CardGroup = Vue.extend({
   }),
   props: {
     cards: { type: Array },
-    isDeck: { type: Boolean }
   }
 });

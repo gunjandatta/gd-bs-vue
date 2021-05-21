@@ -11,9 +11,11 @@ export const Navbar = Vue.extend({
   props: {
     brand: { type: String },
     brandUrl: { type: String },
+    enableScrolling: { type: Boolean },
     enableSearch: { type: Boolean },
     id: { type: String },
     items: { type: Array },
+    itemsEnd: { type: Array },
     onClick: { type: Function },
     searchBox: { type: Object },
     type: { type: Number }

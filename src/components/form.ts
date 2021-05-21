@@ -10,11 +10,14 @@ export const Form = Vue.extend({
   }),
   props: {
     controls: { type: Array },
+    groupClassName: { type: String },
+    isFloating: { type: Boolean },
     rowClassName: { type: String },
     rows: { type: Array },
     onControlRendering: { type: Function },
     onControlRendered: { type: Function },
     onRendered: { type: Function },
+    validationType: { type: Number },
     value: { type: Object }
   }
 });

@@ -14,6 +14,7 @@ export const Progress = Vue.extend({
     label: { type: String },
     max: { type: Number },
     min: { type: Number },
-    size: { type: Number }
+    size: { type: Number },
+    type: { type: Number }
   }
 });

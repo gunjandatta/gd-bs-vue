@@ -11,7 +11,6 @@ export const Tooltip = Vue.extend({
   props: {
     btnType: { type: Number },
     options: { type: Object },
-    text: { type: String },
     type: { type: Number }
   }
 });

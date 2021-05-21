@@ -9,11 +9,13 @@ export const Dropdown = Vue.extend({
     bs: Components.Dropdown
   }),
   props: {
+    btnClassName: { type: String },
     dropLeft: { type: Boolean },
     dropRight: { type: Boolean },
     dropUp: { type: Boolean },
     formFl: { type: Boolean },
     id: { type: String },
+    isDark: { type: Boolean },
     isDatalist: { type: Boolean },
     isReadonly: { type: Boolean },
     isSplit: { type: Boolean },

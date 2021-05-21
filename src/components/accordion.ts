@@ -9,6 +9,7 @@ export const Accordion = Vue.extend({
     bs: Components.Accordion
   }),
   props: {
+    autoCollapse: { type: Boolean },
     id: { type: String },
     items: { type: Array },
     options: { type: Object }

@@ -11,6 +11,7 @@ export const ListBox = Vue.extend({
   props: {
     label: { type: String },
     id: { type: String },
+    isReadonly: { type: Boolean },
     items: { type: Array },
     multi: { type: Boolean },
     placeholder: { type: String },

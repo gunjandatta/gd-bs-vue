@@ -14,7 +14,6 @@ export const Toast = Vue.extend({
     headerImgClass: { type: String },
     headerImgSrc: { type: String },
     headerText: { type: String },
-    hideCloseButton: { type: Boolean },
     mutedText: { type: String },
     options: { type: Object },
     onClick: { type: Function },
